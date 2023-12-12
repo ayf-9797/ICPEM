@@ -39,5 +39,5 @@ generated_ids = model.generate(
                 repetition_penalty=3.5,  
                 length_penalty=2.5,  
                 early_stopping=True  
-            )
+            )  
 The script named "parallel_count_grade_2.py" enables parallel automatic metrics validation. To control the evaluation, two parameters need to be specified: "model_type" and "mode". For T5 models, use "model_type='t5'" and "mode='ct5'". For GPT models, use "model_type='gpt'" and "mode='pclue'". For Bloom models, use "model_type='bloom'" and "mode='pclue'".
