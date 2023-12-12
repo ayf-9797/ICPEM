@@ -18,3 +18,25 @@ torch                         2.0.1
 transformers                  4.34.1  
 tokenizers                    0.14.1  
 cuda                          11.6  
+
+The decoding parameters used in this paper are as follows:
+ICPEM, Prompt_clue:  
+generated_ids = model.generate(  
+                input_ids=ids,  
+                attention_mask=mask,  
+                max_length=256,  
+                do_sample=True,  
+                top_p=0.6,  
+                early_stopping=True  
+            )  
+GPT, Bloom:  
+generated_ids = model.generate(  
+                input_ids=data['input_ids'],  
+                attention_mask=data['attention_mask'],  
+                min_length=3,  
+                max_new_tokens=256,  
+                pad_token_id=tokenizer.pad_token_id,  
+                repetition_penalty=3.5,  
+                length_penalty=2.5,  
+                early_stopping=True  
+            )
